@@ -14,7 +14,28 @@ namespace sim756.HOTP
 		public int Length { get; set; } = DefaultLength;
 		public long Steps { get; set; } = DefaultSteps;
 
-		public byte[] Key { get; set; }
+		private byte[] key;
+		private string keyString;
+
+		public byte[] Key
+		{
+			get => key;
+			set
+			{
+				key = value;
+				keyString = Base32Encoding.ToString(value);
+			}
+		}
+
+		public string KeyString
+		{
+			get => keyString;
+			set
+			{
+				keyString = value;
+				Key = Base32Encoding.ToBytes(value);
+			}
+		}
 
 		public HOTPGenerator()
 		{
@@ -32,6 +53,11 @@ namespace sim756.HOTP
 			Key = Base32Encoding.ToBytes(key);
 			Length = hotpLength;
 			Steps = hotpStep;
+		}
+
+		public string Compute(string key, DateTime? dateTime = null)
+		{
+			return Compute(Base32Encoding.ToBytes(key), dateTime);
 		}
 
 		public string Compute(byte[] key = null, DateTime? dateTime = null)

@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/sim756/sim756.HOTP</PackageProjectUrl>
+    <AssemblyVersion>5.0.0.0</AssemblyVersion>
+    <FileVersion>5.0.0.0</FileVersion>
+    <PackageTags>HOTP; OTP; TOTP; HMAC; HOTP Generator; OTP Generator; TOTP Generator</PackageTags>
+    <Description>HMAC-based one-time password generator.</Description>
+    <Company>sim756</Company>
+    <Version>5.0.0</Version>
+    <Title>sim756 HMAC-Based One-Time Password Generator (HOTP)</Title>
   </PropertyGroup>
-
 </Project>
