@@ -8,7 +8,7 @@ string hotp = new HOTPGenerator().Compute("QWERTYUIOPASDFGH");
 string nextHotp = new HOTPGenerator().Compute("QWERTYUIOPASDFGH", DateTime.UtcNow.AddSeconds(30));
 ```
 ```c#
-string hotp2 = new HOTPGenerator()
+string hotp = new HOTPGenerator()
 {
   KeyString = "QWERTYUIOPASDFGH",
   Length = 6,
