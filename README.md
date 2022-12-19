@@ -1,6 +1,10 @@
 # sim756.HOTP
 HMAC-based one-time password generator.
 
+[https://www.nuget.org/packages/sim756.HOTP](https://www.nuget.org/packages/sim756.HOTP)
+
+[https://github.com/sim756/sim756.HOTP](https://github.com/sim756/sim756.HOTP)
+
 ```c#
 string hotp = new HOTPGenerator().Compute("QWERTYUIOPASDFGH");
 ```
