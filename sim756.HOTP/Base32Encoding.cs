@@ -71,17 +71,12 @@ namespace sim756.HOTP
 
 			char AsciiToChar(byte ascii)
 			{
-				if (ascii < 26)
+				return ascii switch
 				{
-					return (char)(ascii + 65);
-				}
-
-				if (ascii < 32)
-				{
-					return (char)(ascii + 24);
-				}
-
-				throw new ArgumentException("Invalid Base32 value!");
+					< 26 => (char)(ascii + 65),
+					< 32 => (char)(ascii + 24),
+					_ => throw new ArgumentException("Invalid Base32 value!")
+				};
 			}
 
 			for (int i = 0; i < value.Length; i++)
